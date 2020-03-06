@@ -1,6 +1,6 @@
 import {StyleSheet, Dimensions, Platform} from 'react-native';
 import colors from '../color/';
-// import fonts from '../fonts';
+import fonts from '../fonts';
 
 export function normalize(size) {
   const newSize = size * scale;
@@ -10,7 +10,6 @@ export function normalize(size) {
     return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2;
   }
 }
-
 const {width, height} = Dimensions.get('window');
 export default StyleSheet.create({
   flex1: {
@@ -57,20 +56,52 @@ export default StyleSheet.create({
     flexDirection: 'column',
     flexWrap: 'wrap',
   },
+  h20: {
+    height: 20,
+  },
   h30: {
     height: 30,
   },
   h40: {
-    height:40,
+    height: 40,
+  },
+  h50: {
+    height: 50,
+  },
+  h60: {
+    height: 60,
   },
   h150: {
     height: 150,
   },
   pmr10: {
     paddingVertical: 6,
-    paddingRight: 10,
+    paddingRight: 20,
+    left: 15,
   },
-  pml10: {paddingVertical: 5, paddingLeft: 10},
+  homeLeftImg: {
+    marginBottom: 90,
+    // marginLeft: 15,
+    left: 11,
+  },
+  homeRightImg: {
+    marginBottom: 88,
+    // marginRight: 0,
+    right: -5,
+  },
+  homeRightImg1: {
+    marginBottom: 88,
+    // marginRight: 15,
+    right: 15,
+  },
+  pml101: {
+    paddingVertical: 5,
+    right: 5,
+  },
+  pml10: {
+    paddingVertical: 5,
+    paddingLeft: 15,
+  },
   pt0: {
     paddingTop: 0,
   },
@@ -79,6 +110,9 @@ export default StyleSheet.create({
   },
   pt10: {
     paddingTop: 10,
+  },
+  p10: {
+    padding: 10,
   },
   p15: {
     padding: 15,
@@ -224,6 +258,9 @@ export default StyleSheet.create({
   mh10: {
     marginHorizontal: 10,
   },
+  mh13: {
+    marginHorizontal: 10,
+  },
   mh15: {
     marginHorizontal: 15,
   },
@@ -239,8 +276,20 @@ export default StyleSheet.create({
   mh40: {
     marginHorizontal: 40,
   },
+  mv5: {
+    marginVertical: 5,
+  },
   mv10: {
     marginVertical: 10,
+  },
+  mv11: {
+    paddingVertical: 11,
+  },
+  mv12: {
+    marginVertical: 12,
+  },
+  mv13: {
+    marginVertical: 13.5,
   },
   mv15: {
     marginVertical: 15,
@@ -256,6 +305,9 @@ export default StyleSheet.create({
   },
   ml10: {
     marginLeft: 10,
+  },
+  ml13: {
+    marginLeft: 13,
   },
   ml20: {
     marginLeft: 20,
@@ -342,6 +394,9 @@ export default StyleSheet.create({
   alignSelf: {
     alignSelf: 'center',
   },
+  alignSelfStart: {
+    alignSelf: 'flex-start',
+  },
   justifyContentCenter: {
     justifyContent: 'center',
   },
@@ -354,17 +409,20 @@ export default StyleSheet.create({
   alignItemsFlexend: {
     alignItems: 'flex-end',
   },
-  textRegularRoboto: {
-    // fontFamily: fonts.RobotoRegular,
+  textBariolRegular: {
+    fontFamily: fonts.BariolRegular,
   },
-  textMediumRoboto: {
-    // fontFamily: fonts.RobotoMedium,
+  textBariolBold: {
+    fontFamily: fonts.BariolBold,
   },
-  textBoldRoboto: {
-    // fontFamily: fonts.RobotoBold,
+  textBariolSemi: {
+    fontFamily: fonts.BariolSemi,
   },
-  textGothamMedium: {
-    // fontFamily: fonts.GothamMedium,
+  textBariolLight: {
+    fontFamily: fonts.BariolLight,
+  },
+  textBariolThin: {
+    fontFamily: fonts.BariolThin,
   },
   White: {
     color: colors.white,
@@ -373,7 +431,16 @@ export default StyleSheet.create({
     color: colors.lightWhite,
   },
   themeColor: {
-    color: colors.themeColor,
+    color: colors.blue,
+  },
+  darkblue: {
+    color: colors.darkblue,
+  },
+  black: {
+    color: colors.black,
+  },
+  grey: {
+    color: colors.grey,
   },
   font10: {
     fontSize: 10,
@@ -390,12 +457,85 @@ export default StyleSheet.create({
   font18: {
     fontSize: 18,
   },
+  font20: {
+    fontSize: 20,
+  },
+  font22: {
+    fontSize: 22,
+  },
+  lable: {
+    fontFamily: fonts.BariolBold,
+    fontWeight: '900',
+    fontSize: 16,
+    lineHeight: 20,
+    color: colors.grey,
+  },
+  text1: {
+    color: colors.darkblue,
+    fontFamily: fonts.BariolBold,
+    fontWeight: '900',
+    fontSize: 26,
+    textAlign: 'center',
+  },
+  text2: {
+    color: colors.blue,
+    fontFamily: fonts.BariolRegular,
+    fontSize: 18,
+    fontWeight: '600',
+    lineHeight: 17,
+    textAlign: 'center',
+  },
+  text3: {
+    color: colors.blue,
+    fontFamily: fonts.BariolRegular,
+    fontWeight: '600',
+    fontSize: 12,
+    lineHeight: 23,
+    textAlign: 'center',
+  },
+  text4: {
+    color: colors.blue,
+    fontFamily: fonts.BariolRegular,
+    fontSize: 14,
+    fontWeight: '800',
+    lineHeight: 18,
+    textAlign: 'center',
+  },
+  lineHeight15: {
+    lineHeight: 15,
+  },
+  bold: {
+    fontWeight: '800',
+  },
   contain: {
     resizeMode: 'contain',
   },
+  headerhomeBg: {
+    height: 170,
+    width: width,
+    resizeMode: 'stretch',
+  },
+  headerhomeContainer: {
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent',
+    justifyContent: 'space-around',
+    ...Platform.select({
+      ios: {
+        marginTop: 0,
+      },
+      android: {
+        marginTop: 0,
+        height: 170,
+      },
+    }),
+  },
+  headerBg: {
+    width: width,
+    height: 80,
+  },
   headerContainer: {
-    // backgroundColor: colors.red,
-    // borderBottomColor: colors.red,
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent',
     justifyContent: 'space-around',
     paddingHorizontal: 20,
     ...Platform.select({
@@ -404,20 +544,12 @@ export default StyleSheet.create({
       },
       android: {
         marginTop: 0,
-        height: 45,
+        height: 80,
       },
     }),
   },
-  lable: {
-    // fontFamily: fonts.Sf_Pro_Text,
-    fontStyle: 'normal',
-    fontWeight: '600',
-    fontSize: 15,
-    lineHeight: 20,
-    color: colors.black,
-  },
   headerText: {
-    // fontFamily: fonts.Sf_Pro_Text,
+    fontFamily: fonts.BariolRegular,
     fontStyle: 'normal',
     fontWeight: '300',
     fontSize: 15,
@@ -472,33 +604,11 @@ export default StyleSheet.create({
     position: 'absolute',
   },
   splashLogo: {
-    width: 150,
-    height: 150,
+    width: 250,
+    height: 250,
     alignSelf: 'center',
-  },
-  introTitle: {
-    fontSize: 28,
-    // fontFamily: fonts.RobotoBold,
-    color: colors.red,
-    textAlign: 'center',
-    marginTop: 2,
-    marginBottom: 15,
-  },
-  elementColor1: {
-    // backgroundColor: colors.red,
-    ...Platform.select({
-      ios: {
-        // shadowColor: colors.black,
-        shadowOffset: {
-          width: 1,
-          height: 2,
-        },
-        shadowOpacity: 0.8,
-      },
-      android: {
-        elevation: 5,
-      },
-    }),
+    justifyContent: 'center',
+    marginBottom: 140,
   },
   buttonContainer: {
     flexDirection: 'column',
@@ -508,30 +618,38 @@ export default StyleSheet.create({
     position: 'absolute',
   },
   button: {
-    width: '70%',
-    height: 50,
+    borderColor: colors.blue,
+    width: '90%',
+    height: 45,
     marginTop: 5,
     marginBottom: 5,
     alignContent: 'center',
     alignItems: 'center',
+    alignSelf: 'center',
     position: 'relative',
     borderRadius: 50,
   },
   buttonShaddow: {
+    borderColor: 'transparent',
+    alignSelf: 'center',
+    width: '90%',
     shadowColor: '#000',
     borderWidth: 0.8,
+    borderRadius: 100,
     shadowOpacity: 0.8,
-    elevation: 6,
-    // color: colors.red,
-    shadowOffset: {width: 4, height: 6},
+    elevation: 3,
+    shadowOffset: {width: 1, height: 6},
   },
   buttonText: {
-    fontSize: 16,
-    // fontFamily: fonts.RobotoMedium,
-    // fontWeight: 'bold',
+    fontSize: 14,
+    fontFamily: fonts.BariolBold,
     textAlign: 'center',
     color: colors.white,
-    paddingVertical: 21,
+  },
+  buttonImg: {
+    width: '90%',
+    height: 45,
+    alignSelf: 'center',
   },
   smallBtnImg: {
     width: 160,
@@ -554,7 +672,19 @@ export default StyleSheet.create({
     resizeMode: 'stretch',
     position: 'absolute',
   },
-
+  backBtn: {
+    position: 'absolute',
+    top: 50,
+    left: 30,
+    width: 20,
+    height: 20,
+  },
+  hitSlop: {
+    top: 10,
+    bottom: 10,
+    left: 10,
+    right: 10,
+  },
   headerBack: {
     alignSelf: 'flex-start',
     marginLeft: 15,
@@ -574,7 +704,7 @@ export default StyleSheet.create({
     }),
   },
   normalBtn: {
-    // backgroundColor: colors.red,
+    backgroundColor: colors.blue,
     width: '75%',
     height: 40,
     borderRadius: 50,
@@ -583,43 +713,31 @@ export default StyleSheet.create({
     alignSelf: 'center',
   },
   normalBtnText: {
-    // fontFamily: fonts.GothamMedium,
-    fontSize: 16,
-    fontWeight: '100',
-    // color: colors.lightWhite,
-    textAlign: 'center',
-    paddingVertical: 12,
-  },
-  smallBtnText: {
-    // fontFamily: fonts.RobotoRegular,
-    fontSize: 12,
-    // color: colors.lightWhite,
-    textAlign: 'center',
-    paddingVertical: 17,
-  },
-  startBtnText: {
-    // fontFamily: fonts.RobotoRegular,
-    fontSize: 12,
-    // color: colors.lightWhite,
-    textAlign: 'center',
-    paddingVertical: 13,
-  },
-  logoutBtn: {
-    // backgroundColor: colors.red,
-    width: '65%',
-    height: 50,
-    borderRadius: 50,
-    marginTop: 30,
-    marginVertical: 15,
-    alignSelf: 'center',
-  },
-  loginText: {
-    // fontFamily: fonts.GothamMedium,
+    fontFamily: fonts.BariolRegular,
     fontSize: 16,
     fontWeight: '100',
     color: colors.lightWhite,
     textAlign: 'center',
-    paddingVertical: 10,
+    paddingVertical: 12,
+  },
+  smallBtnText: {
+    fontFamily: fonts.BariolRegular,
+    fontSize: 12,
+    color: colors.lightWhite,
+    textAlign: 'center',
+    paddingVertical: 17,
+  },
+  startBtnText: {
+    fontFamily: fonts.BariolRegular,
+    fontSize: 12,
+    color: colors.lightWhite,
+    textAlign: 'center',
+    paddingVertical: 13,
+  },
+  checkBoxContainerStyle: {
+    backgroundColor: 'transparent',
+    borderColor: 'transparent',
+    paddingVertical: -15,
   },
   profileImage: {
     marginTop: 60,
@@ -628,101 +746,35 @@ export default StyleSheet.create({
     padding: 2,
     borderRadius: 70,
   },
-  logoutText: {
-    // fontFamily: fonts.RobotoMedium,
-    fontSize: 16,
-    fontWeight: '100',
-    // color: colors.lightWhite,
-    textAlign: 'center',
-    paddingVertical: 15,
-  },
-  profileCont: {
-    height: 160,
-    width: '100%',
-    // borderBottomColor: colors.white,
-    borderBottomWidth: 0.5,
-  },
-  profileTitle: {
-    // fontFamily: fonts.RobotoRegular,
-    fontSize: 20,
-    // color: colors.red,
-    marginTop: 50,
-    textAlign: 'center',
-  },
-  profileSubText: {
-    // fontFamily: fonts.RobotoLight,
-    fontSize: 12,
-    // color: colors.lightWhite,
-    marginTop: 5,
-    textAlign: 'center',
-  },
-  profileText: {
-    // fontFamily: fonts.RobotoRegular,
-    fontSize: 16,
-    // color: colors.lightWhite,
-    marginHorizontal: 30,
-    marginTop: 30,
-  },
   confirmButton: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: colors.red,
+    color: colors.blue,
   },
   confirmMsg: {
     fontSize: 18,
-    // color: colors.lightWhite,
+    color: colors.lightWhite,
     ...Platform.select({
       ios: {
-        // fontFamily: fonts.RobotoMedium,
+        fontFamily: fonts.BariolRegular,
       },
       android: {
-        // fontFamily: fonts.RobotoMedium,
+        fontFamily: fonts.BariolRegular,
       },
     }),
   },
-  text1: {
-    color: colors.red,
-    fontFamily: fonts.RobotoMedium,
-    fontSize: 24,
-    textAlign: 'center',
-  },
-  text2: {
-    color: colors.lightWhite,
-    fontFamily: fonts.GothamMedium,
-    fontSize: 16,
-    fontWeight: 'normal',
-    lineHeight: 17,
-    textAlign: 'auto',
-  },
-  text3: {
-    color: colors.lightWhite,
-    fontFamily: fonts.RobotoRegular,
-    fontSize: 18,
-    lineHeight: 23,
-    textAlign: 'left',
-  },
-  text4: {
-    color: colors.lightWhite,
-    fontFamily: fonts.GothamBook,
-    fontSize: 14,
-    fontWeight: 'normal',
-    lineHeight: 17,
-    textAlign: 'auto',
-  },
-
   ShareHeader: {
     alignSelf: 'center',
-    color: colors.red,
+    color: colors.blue,
     fontSize: 18,
-    fontFamily: fonts.RobotoMedium,
+    fontFamily: fonts.BariolRegular,
     position: 'absolute',
     top: 30,
   },
   ShareText: {
     textAlign: 'center',
-    color: colors.red,
+    color: colors.blue,
     fontSize: 16,
-    // paddingHorizontal: 90,
   },
   ShareSpacer: {
     width: '100%',
@@ -740,7 +792,7 @@ export default StyleSheet.create({
     zIndex: 2,
   },
   modal3Btn: {
-    backgroundColor: colors.red,
+    backgroundColor: colors.blue,
     width: '45%',
     height: 40,
     borderRadius: 50,
@@ -749,45 +801,254 @@ export default StyleSheet.create({
     alignSelf: 'center',
   },
   modal3BtnText: {
-    fontFamily: fonts.GothamMedium,
+    fontFamily: fonts.BariolRegular,
     fontSize: 16,
     color: colors.white,
     textAlign: 'center',
     paddingVertical: 12,
   },
   tabsContainerStyle: {
-    backgroundColor: 'transparent',
+    backgroundColor: colors.bg,
     borderColor: 'transparent',
-    width: '70%',
+    width: '85%',
+    marginBottom: 5,
+    borderRadius: 50,
     alignSelf: 'center',
-    marginBottom: 30,
     ...Platform.select({
       ios: {
         height: 43,
         width: '95%',
       },
       android: {
-        height: 30,
+        height: 45,
+        elevation: 6,
       },
     }),
   },
-  tabStyle: {
-    backgroundColor: 'transparent',
-    borderColor: colors.red,
-    borderWidth: 0.7,
-  },
+
   tabTextStyle: {
-    fontSize: 12,
-    color: colors.red,
-    fontFamily: fonts.GothamMedium,
+    fontSize: 14,
+    color: colors.grey,
+    fontFamily: fonts.BariolRegular,
+  },
+  tabStyle: {
+    backgroundColor: colors.bg,
+    borderColor: 'transparent',
+    borderRadius: 80,
+    borderWidth: 0.7,
   },
   activeTabStyle: {
     color: colors.white,
-    backgroundColor: colors.red,
+    backgroundColor: colors.blue,
+    borderColor: colors.blue,
+    borderRadius: 80,
   },
   activeTabTextStyle: {
-    fontFamily: fonts.RobotoBold,
+    fontFamily: fonts.BariolRegular,
     fontSize: 12,
-    color: colors.red,
+    color: colors.blue,
+  },
+  oboardingImg: {
+    width,
+    height: 330,
+  },
+  oboardingLogo: {
+    width: 200,
+    height: 200,
+    alignSelf: 'center',
+    justifyContent: 'space-around',
+    position: 'absolute',
+    top: 90,
+  },
+  inputHomeContainer: {
+    backgroundColor: colors.white,
+    borderRadius: 50,
+    alignItems: 'center',
+    alignContent: 'center',
+    justifyContent: 'center',
+    width: width - 80,
+    height: 40,
+    marginVertical: 10,
+  },
+  inputContainer: {
+    backgroundColor: colors.white,
+    elevation: 3,
+    borderRadius: 50,
+    alignItems: 'center',
+    alignContent: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    height: 45,
+    borderColor: 'transparent',
+    marginVertical: 10,
+  },
+  inputStyle: {
+    fontSize: 15,
+    fontFamily: fonts.BariolRegular,
+    paddingLeft: 20,
+    borderRadius: 50,
+    color: colors.blue,
+  },
+  verify: {
+    width: '60%',
+    alignSelf: 'center',
+    marginVertical: 10,
+    lineHeight: 22,
+  },
+  gridPad: {padding: 30},
+  txtMargin: {margin: 3},
+  inputRadius: {textAlign: 'center'},
+  otp: {
+    flex: 1,
+    justifyContent: 'space-between',
+    paddingTop: 10,
+    backgroundColor: colors.bg,
+    padding: 8,
+  },
+  homeItmBox: {
+    justifyContent: 'center',
+    elevation: 4,
+    borderColor: colors.bg,
+    borderRadius: 15,
+    backgroundColor: colors.white,
+    width: 90,
+    height: 85,
+    margin: 5,
+  },
+  homeItmImg: {
+    width: 55,
+    height: 55,
+    alignSelf: 'center',
+  },
+  homeCont: {
+    flex: 1,
+    display: 'flex',
+    marginVertical: 20,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+  },
+  ratedItmBox: {
+    elevation: 4,
+    borderColor: colors.bg,
+    borderRadius: 50,
+    width: 50,
+    height: 50,
+    margin: 15,
+  },
+  ratedItmImg: {
+    width: 60,
+    height: 60,
+    borderRadius: 50,
+    alignSelf: 'center',
+  },
+  rateCont: {
+    flex: 1,
+    display: 'flex',
+    marginTop: 15,
+    justifyContent: 'space-evenly',
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+  },
+  bottomTabItm: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    paddingTop: 5,
+    opacity: 1,
+    backgroundColor: colors.bg,
+  },
+  dropDown: {
+    width: 45,
+    height: 45,
+    borderRadius: 50,
+    backgroundColor: colors.white,
+    elevation: 6,
+    marginTop: 12,
+    marginLeft: 10,
+  },
+  dropDownText: {
+    marginTop: 10,
+    marginLeft: 12,
+    color: colors.blue,
+  },
+  bottomTabImg: {
+    alignSelf: 'center',
+  },
+  bottomTabImg1: {
+    alignSelf: 'center',
+    width: 50,
+    height: 50,
+    // position:'absolute',
+    top: -15,
+  },
+  bottomTabText: {
+    fontFamily: fonts.BariolBold,
+    fontWeight: '900',
+    fontSize: 12,
+    lineHeight: 20,
+    textAlign: 'center',
+    color: colors.grey,
+    marginBottom: 5,
+  },
+
+  float: {
+    // position:'absolute',
+    top: -5,
+  },
+  rowCont: {
+    flex: 1,
+    alignSelf: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    margin: 5,
+  },
+  BPImg: {
+    height: 70,
+    width: 70,
+    margin: 2,
+    marginRight: 10,
+    backgroundColor: colors.bg,
+    borderRadius: 50,
+    resizeMode: 'stretch',
+  },
+  projectItmCont: {
+    backgroundColor: colors.white,
+    width: '85%',
+    alignSelf: 'center',
+    elevation: 3,
+    padding: 5,
+    borderRadius: 20,
+  },
+  directoryImg: {
+    height: 50,
+    width: 50,
+    margin: 5,
+    // borderRadius: 50,
+    resizeMode: 'stretch',
+  },
+  directoryItmCont: {
+    backgroundColor: colors.white,
+    width: '85%',
+    alignSelf: 'center',
+    elevation: 3,
+    borderRadius: 20,
+    padding: 5,
+  },
+  InboxItmCont: {
+    backgroundColor: colors.bg,
+    width: '90%',
+    alignSelf: 'center',
+    padding: 5,
+    borderWidth: 0.7,
+    borderColor: colors.bg,
+    borderBottomColor: colors.grey,
+  },
+  inboxImg: {
+    height: 70,
+    width: 70,
+    margin: 6,
+    borderRadius: 50,
+    backgroundColor: colors.bg,
+    resizeMode: 'stretch',
   },
 });
